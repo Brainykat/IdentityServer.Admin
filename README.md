@@ -1,8 +1,8 @@
-![Logo](docs/Images/IdentityServer.Admin-Logo-ReadMe.png)
 
-# IdentityServer.Admin ⚡
 
-> The administration for the Duende IdentityServer and Asp.Net Core Identity
+# IdentityServer.Admin 
+
+> The administration for the  IdentityServer and Asp.Net Core Identity
 The application is written in the **Asp.Net Core MVC - using .NET 8.0**
 
 ## Requirements
@@ -28,9 +28,9 @@ The application is written in the **Asp.Net Core MVC - using .NET 8.0**
 
 ### DNS
 
-We need some resolving capabilities in order for the project to work. The domain `skoruba.local` is used here to represent the domain this setup is hosted on. The domain-name needs to be FQDN (fully qualified domain name).
+We need some resolving capabilities in order for the project to work. The domain `identity.local` is used here to represent the domain this setup is hosted on. The domain-name needs to be FQDN (fully qualified domain name).
 
-Thus first, we need the domain `skoruba.local` to resolve to the docker-host machine. If you want this to work on your local machine only, use the first option.
+Thus first, we need the domain `identity.local` to resolve to the docker-host machine. If you want this to work on your local machine only, use the first option.
 
 #### DNS on docker-host machine only
 
@@ -42,10 +42,10 @@ Edit your hosts file:
 and add the following entries:
 
 ```custom
-127.0.0.1 identity.local sts.skoruba.local admin.skoruba.local admin-api.skoruba.local
+127.0.0.1 identity.local sts.identity.local admin.identity.local admin-api.identity.local
 ```
 
-This way your host machine resolves `skoruba.local` and its subdomains to itself.
+This way your host machine resolves `identity.local` and its subdomains to itself.
 
 ### Certificates
 
@@ -68,14 +68,14 @@ copy $env:LOCALAPPDATA\mkcert\rootCA-key.pem ./cacerts.pem
 copy $env:LOCALAPPDATA\mkcert\rootCA.pem ./cacerts.crt
 ```
 
-##### Create the `skoruba.local` certificates
+##### Create the `identity.local` certificates
 
-Generate a certificate for `skoruba.local` with wildcards for the subdomains. The name of the certificate files need to match with actual domain-names in order for the nginx-proxy to pick them up correctly. We want both the crt-key and the pfx version.
+Generate a certificate for `identity.local` with wildcards for the subdomains. The name of the certificate files need to match with actual domain-names in order for the nginx-proxy to pick them up correctly. We want both the crt-key and the pfx version.
 
 ```bash
 cd shared/nginx/certs
-mkcert -cert-file identity.local.crt -key-file identity.local.key identity.local *.skoruba.local
-mkcert -pkcs12 identity.local.pfx identity.local *.skoruba.local
+mkcert -cert-file identity.local.crt -key-file identity.local.key identity.local *.identity.local
+mkcert -pkcs12 identity.local.pfx identity.local *.identity.local
 ```
 ### Run docker-compose
 
@@ -91,7 +91,7 @@ docker-compose up -d
 
 ### Docker images
 
-- Docker images will be available also in [docker hub](https://hub.docker.com/u/skoruba)
+- Docker images will be available also in [docker hub](https://hub.docker.com/u/identity)
 
 ### Publish Docker images to Docker hub
 
@@ -248,7 +248,7 @@ The you need specify the key identifier in configuration:
     "MinimumLevel": {
       "Default": "Error",
       "Override": {
-        "Skoruba": "Information"
+        "identity": "Information"
       }
     },
     "WriteTo": [
@@ -280,7 +280,7 @@ The you need specify the key identifier in configuration:
 
 ## Audit Logging
 
-- This solution uses audit logging via - https://github.com/skoruba/AuditLogging (check this link for more detal about this implementation :blush:)
+- This solution uses audit logging via - https://github.com/identity/AuditLogging (check this link for more detal about this implementation :blush:)
 - In the Admin UI project is following setup:
 
 ```cs
@@ -323,7 +323,7 @@ You can also use your custom theme by integrating it in your project or hosting 
 ```json
   "AdminConfiguration": {
     "PageTitle": "IdentityServer",
-    "HomePageLogoUri": "~/images/skoruba-icon.png",
+    "HomePageLogoUri": "~/images/identity-icon.png",
     "FaviconUri": "~/favicon.ico",
     "Theme": "united",
     "CustomThemeCss": null,
