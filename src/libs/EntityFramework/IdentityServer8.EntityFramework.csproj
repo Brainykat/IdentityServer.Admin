@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <PackageId>IdentityServer8.EntityFramework</PackageId>
+        <TargetFramework>net8.0</TargetFramework>
+
+        <Description>EntityFramework persistence layer for  IdentityServer</Description>
+        <AssemblyName>IdentityServer8.EntityFramework</AssemblyName>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\EntityFramework.Storage\IdentityServer8.EntityFramework.Storage.csproj" />
+        <ProjectReference Include="..\IdentityServer\IdentityServer8.csproj" />
+    </ItemGroup>
+</Project>

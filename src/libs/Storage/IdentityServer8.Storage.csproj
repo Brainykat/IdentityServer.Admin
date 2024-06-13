@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+
+        <PackageId>IdentityServer8.Storage</PackageId>
+        <Description>Storage interfaces and models for  IdentityServer</Description>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+		<PackageReference Include="IdentityModel" Version="7.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.DataProtection.Abstractions" Version="8.0.6" />
+    </ItemGroup>
+
+</Project>

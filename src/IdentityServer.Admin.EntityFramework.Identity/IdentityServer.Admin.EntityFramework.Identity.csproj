@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Description>Entity Framework layer for the administration of the Asp.Net Core Identity and Duende IdentityServer</Description>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="13.0.1" />
+		<PackageReference Include="Azure.Identity" Version="1.10.4" />
+
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\IdentityServer.Admin.EntityFramework\IdentityServer.Admin.EntityFramework.csproj" />
+		<ProjectReference Include="..\libs\EntityFramework\IdentityServer8.EntityFramework.csproj" />
+	</ItemGroup>
+
+</Project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

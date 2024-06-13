@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Description>Entity Framework layer for the administration of the Duende IdentityServer</Description>
+	</PropertyGroup>
+
+	<ItemGroup>
+
+		<PackageReference Include="Azure.Identity" Version="1.10.4" />
+
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.6" />
+		<PackageReference Include="Skoruba.AuditLogging.EntityFramework" Version="1.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\IdentityServer.Admin.EntityFramework.Extensions\IdentityServer.Admin.EntityFramework.Extensions.csproj" />
+		<ProjectReference Include="..\libs\EntityFramework\IdentityServer8.EntityFramework.csproj" />
+	</ItemGroup>
+</Project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
