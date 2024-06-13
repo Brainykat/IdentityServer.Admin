@@ -42,7 +42,7 @@ Edit your hosts file:
 and add the following entries:
 
 ```custom
-127.0.0.1 skoruba.local sts.skoruba.local admin.skoruba.local admin-api.skoruba.local
+127.0.0.1 identity.local sts.skoruba.local admin.skoruba.local admin-api.skoruba.local
 ```
 
 This way your host machine resolves `skoruba.local` and its subdomains to itself.
@@ -74,8 +74,8 @@ Generate a certificate for `skoruba.local` with wildcards for the subdomains. Th
 
 ```bash
 cd shared/nginx/certs
-mkcert -cert-file skoruba.local.crt -key-file skoruba.local.key skoruba.local *.skoruba.local
-mkcert -pkcs12 skoruba.local.pfx skoruba.local *.skoruba.local
+mkcert -cert-file identity.local.crt -key-file identity.local.key identity.local *.skoruba.local
+mkcert -pkcs12 identity.local.pfx identity.local *.skoruba.local
 ```
 ### Run docker-compose
 
@@ -160,11 +160,11 @@ The following Gulp commands are available:
 
 **PostgreSQL**:
 
-> Server=localhost;Port=5432;Database=DuendeIdentityServerAdmin;User Id=sa;Password=#;
+> Server=localhost;Port=5432;Database=IdentityServerAdmin;User Id=sa;Password=#;
 
 **MySql:**
 
-> server=localhost;database=DuendeIdentityServerAdmin;user=root;password=#
+> server=localhost;database=IdentityServerAdmin;user=root;password=#
 
 ### We suggest to use seed data:
 
